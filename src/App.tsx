@@ -12,9 +12,9 @@ function App() {
       <Canvas legacy={true} camera={{position:[-5,2,0], fov:60}}>
         <ambientLight intensity={0.2}/>
         <pointLight position={[5,5,5]}/>
-         <MyBox position={[1,1,-3]}/>
-        <MyBox position={[1,1,0]}/>
-        <MyBox position={[1,1,3]}/>
+         <MyBox position={[1,1,-3]} color='green'/>
+        <MyBox position={[1,1,0]} color='hotpink'/>
+        <MyBox position={[1,1,3]}color='blue'/>
       </Canvas>
     </>
   );

@@ -2,14 +2,15 @@ import React, {useRef} from 'react'
 import {useFrame} from "@react-three/fiber";
 // import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 import {Mesh} from 'three'
-import {Vector3} from 'three'
+import {Vector3,Color } from 'three'
 
 
 type Props ={
-  position: Vector3 | [number, number, number]
+  position: Vector3 | [number, number, number],
+  color: Color | string
 }
 
-const MyBox = ({position}:Props) => {
+const MyBox = ({position,color}:Props) => {
   
   const myMesh = useRef<Mesh | null>(null)
   // myMesh.current?.focus();
@@ -24,7 +25,7 @@ const MyBox = ({position}:Props) => {
   return (
     <mesh position={position} ref={myMesh}>
       <boxBufferGeometry attach='geometry' args={[1, 1, 1]}/>
-      <meshStandardMaterial attach='material' color='blue'/>
+      <meshStandardMaterial attach='material' color={color}/>
     </mesh>
   
   
