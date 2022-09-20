@@ -1,25 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Canvas} from "@react-three/fiber";
+import MyBox from "./components/MyBox";
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Canvas legacy={true} camera={{position:[-5,2,0], fov:60}}>
+        <ambientLight intensity={0.2}/>
+        <pointLight position={[5,5,5]}/>
+         <MyBox position={[1,1,-3]}/>
+        <MyBox position={[1,1,0]}/>
+        <MyBox position={[1,1,3]}/>
+      </Canvas>
+    </>
   );
 }
 
