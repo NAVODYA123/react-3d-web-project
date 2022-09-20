@@ -7,10 +7,11 @@ import {Vector3,Color } from 'three'
 
 type Props ={
   position: Vector3 | [number, number, number],
-  color: Color | string
+  color: Color | string,
+  args:[number, number, number]
 }
 
-const MyBox = ({position,color}:Props) => {
+const MyBox = ({position,color,args}:Props) => {
   
   const myMesh = useRef<Mesh | null>(null)
   // myMesh.current?.focus();
@@ -24,7 +25,7 @@ const MyBox = ({position,color}:Props) => {
   
   return (
     <mesh position={position} ref={myMesh}>
-      <boxBufferGeometry attach='geometry' args={[1, 1, 1]}/>
+      <boxBufferGeometry attach='geometry' args={args}/>
       <meshStandardMaterial attach='material' color={color}/>
     </mesh>
   

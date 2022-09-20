@@ -13,3 +13,13 @@ body {
   background: #f1f4f8;
   position: fixed;
 }
+
+.cubes-title {
+  font-family: 'Harry Potter', sans-serif;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  color:#ff4162;
+}
